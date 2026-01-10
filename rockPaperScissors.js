@@ -1,16 +1,24 @@
-const times = Number(prompt("How many times would you like to play"));
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
+
+
 function rng() {
   let number = Math.floor(Math.random() * 3) + 1;
   return String(number);
 }
 
-function gameLogic(playerInput, bot) {
-  if (playerInput === bot) {
+function gameLogic(userChoice, bot) {
+  if (    
+    (userChoice == "rock" && bot == "1") ||
+    (userChoice == "paper" && bot == "2") ||
+    (userChoice == "scissors" && bot == "3")
+  ) {
     alert("It's a tie");
   } else if (
-    (playerInput == "1" && bot == "3") ||
-    (playerInput == "2" && bot == "1") ||
-    (playerInput == "3" && bot == "2")
+    (userChoice == "rock" && bot == "3") ||
+    (userChoice == "paper" && bot == "1") ||
+    (userChoice == "scissors" && bot == "2")
   ) {
     alert("You are the winner");
   } else {
@@ -18,12 +26,21 @@ function gameLogic(playerInput, bot) {
   }
 }
 
-for (i = 0; i < times; i++) {
-let playerInput = prompt("1 for Rock, 2 for Paper, or 3 for Scissors");
-  
+function playRound(event) {
   let bot = rng();
-  gameLogic(playerInput, bot);
+  let userChoice = event.target.id
+
+  gameLogic(userChoice, bot);
 }
+
+rock.addEventListener("click", playRound)
+paper.addEventListener("click", playRound)
+scissors.addEventListener("click", playRound)
+
+
+
+
+
 
 
 
