@@ -2,6 +2,23 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 const winner = document.createElement("p")
+const lightDarkBtn = document.querySelector("#lightDarkBtn");
+const icon = document.querySelector("#icon")
+
+
+function change() {
+  document.body.classList.toggle("dark");
+  
+  if (document.body.classList.contains("dark")) {
+    icon.src = "./img/sun.png"
+    icon.alt = "Dark Mode"
+  } else {
+    icon.src = "./img/moon.png";
+    icon.alt = "Light Mode"
+  }
+}
+
+lightDarkBtn.addEventListener("click", change);
 
 function rng() {
   let number = Math.floor(Math.random() * 3) + 1;
