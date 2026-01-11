@@ -20,10 +20,15 @@ body.dark {
     display: flex;
     justify-content: flex-end;
     padding: 5px;
+    gap: 40px;
 }
 
 #icon {
     width: 30px;
+}
+
+.headerBtn {
+    padding-top: 5px;
 }
 
 .header {
@@ -47,7 +52,6 @@ body.dark {
     align-items: center;
 }
 
-
 img {
     width: 200px;
 }
@@ -58,12 +62,14 @@ img {
     font-size: 4rem;
 }
 
-.btnStyle > button, input[type="submit"], input[type="reset"] {
-   	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.btnStyle > button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }

@@ -1,36 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="btnContainer" class="btnStyle">
-        <button id="lightDarkBtn">
-            <img id="icon" src="./img/moon.png" alt="Light Mode">
-        </button>
-    </div>
-    
-    <div class="header">
-        <h1>Are you ready to Rock.... Paper, Scissors</h1>
-    </div>
-    
-    <div class="scoreCon">
-        <p id="score">0 - 0</p>
-    </div>
-    
-    <div class="choices btnStyle">
-        <button id="rock"><img src="./img/rock.png" alt="a image of a rock"></button>
-        <button id="paper"><img src="./img/paper.png" alt="a image of paper"></button>
-        <button id="scissors"><img src="./img/scissors.png" alt="a image of scissors"></button>
-    </div>
-    
-    <div id="result">
-        
-    </div>
-    
-    <script src="rockPaperScissors.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="btnContainer">
+            <div id="clickContainer" class="headerBtn">
+                <button>Click Me!</button>
+            </div>
+            
+            <div class="playContainer headerBtn">
+                <button id="play">Play Again</button>
+            </div>
+
+            <div class="btnStyle">
+                <button id="lightDarkBtn">
+                    <img id="icon" src="./img/moon.png" alt="Light Mode" />
+                </button>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>Are you ready to Rock.... Paper, Scissors</h1>
+        </div>
+
+        <div class="scoreCon">
+            <p id="score">0 - 0</p>
+        </div>
+
+        <div class="choices btnStyle">
+            <button id="rock">
+                <img
+                    src="./img/rock.png"
+                    alt="a image of a rock"
+                    id="imgRock"
+                />
+            </button>
+            <button id="paper">
+                <img src="./img/paper.png" alt="a image of paper" />
+            </button>
+            <button id="scissors">
+                <img src="./img/scissors.png" alt="a image of scissors" />
+            </button>
+        </div>
+
+        <div id="result"></div>
+
+        <script src="rockPaperScissors.js"></script>
+    </body>
 </html>
