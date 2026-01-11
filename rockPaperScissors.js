@@ -1,20 +1,20 @@
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-const winner = document.createElement("p")
+const winner = document.createElement("p");
 const lightDarkBtn = document.querySelector("#lightDarkBtn");
-const icon = document.querySelector("#icon")
-
+const icon = document.querySelector("#icon");
+const score = document.querySelector("#score");
 
 function change() {
   document.body.classList.toggle("dark");
-  
+
   if (document.body.classList.contains("dark")) {
-    icon.src = "./img/sun.png"
-    icon.alt = "Dark Mode"
+    icon.src = "./img/sun.png";
+    icon.alt = "Dark Mode";
   } else {
     icon.src = "./img/moon.png";
-    icon.alt = "Light Mode"
+    icon.alt = "Light Mode";
   }
 }
 
@@ -26,33 +26,47 @@ function rng() {
 }
 
 function gameLogic(userChoice, bot) {
-  if (
+  if (userScore == 5 ||comScore == 5) {
+    return
+  } else if (
     (userChoice == "rock" && bot == "1") ||
     (userChoice == "paper" && bot == "2") ||
     (userChoice == "scissors" && bot == "3")
   ) {
-    winner.textContent = "It's a tie"
+    winner.textContent = "It's a tie";
   } else if (
     (userChoice == "rock" && bot == "3") ||
     (userChoice == "paper" && bot == "1") ||
     (userChoice == "scissors" && bot == "2")
   ) {
-    winner.textContent = "You win"
+    winner.textContent = "You win";
+    userScore++
+    score.textContent = `${userScore} - ${comScore}`
   } else {
-    winner.textContent = "You Lose"
+    winner.textContent = "You Lose";
+    comScore++
+    score.textContent = `${userScore} - ${comScore}`
   }
 }
 
 function playRound(event) {
+
   let bot = rng();
   let userChoice = event.currentTarget.getAttribute("id");
-  const result = document.querySelector("#result")
+  const result = document.querySelector("#result");
 
-
-  gameLogic(userChoice, bot);
-  result.appendChild(winner)
+  gameLogic(userChoice, bot, userScore, comScore);
+  result.appendChild(winner);
 }
 
+
+
+let userScore = 0;
+let comScore = 0;
+
+
+  
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
+
